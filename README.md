@@ -2,7 +2,7 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/xdev-software/selenium-elements/check-build.yml?branch=develop)](https://github.com/xdev-software/selenium-elements/actions/workflows/check-build.yml?query=branch%3Adevelop)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xdev-software_selenium-elements&metric=alert_status)](https://sonarcloud.io/dashboard?id=xdev-software_selenium-elements)
 
-# selenium-elements
+# Elements for Selenium
 
 
 ## Installation
