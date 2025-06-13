@@ -16,7 +16,6 @@
 
 	<modules>
 		<module>selenium-elements</module>
-		<module>selenium-elements-demo</module>
 	</modules>
 
 	<properties>
