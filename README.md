@@ -4,7 +4,7 @@
 
 # <img src="https://raw.githubusercontent.com/SeleniumHQ/seleniumhq.github.io/690acbad7b4bf4656f116274809765db64e6ccf7/website_and_docs/static/images/logos/webdriver.svg" height=24 /> Elements for Selenium
 
-Define Selenium HTML elements as Java classes, similar to Selenium's ``@FindBy`` annotation.
+Define Selenium HTML elements as Java classes, similar to Selenium's [``@FindBy`` annotation](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/support/FindBy.html).
 
 Also contains a ton of other predefined utility, for example:
 * Automatically scrolling elements that perform operations into the view
@@ -12,7 +12,7 @@ Also contains a ton of other predefined utility, for example:
 * Option to globally wait until the page finished loading
 * Waiting for some time until the element is present (``waitUntil``)
 
-Overall this improves:
+Overall this should result in:
 * Less [flaky](https://www.browserstack.com/test-reporting-and-analytics/features/test-reporting/what-is-flaky-test) tests
 * Abstraction of elements in an object oriented way
 
@@ -81,3 +81,5 @@ See the [contributing guide](./CONTRIBUTING.md) for detailed instructions on how
 
 ## Dependencies and Licenses
 View the [license of the current project](LICENSE) or the [summary including all dependencies](https://xdev-software.github.io/selenium-elements/dependencies)
+
+<sub>Disclaimer: This is not an official Testcontainers/Selenium product and not associated</sub>
