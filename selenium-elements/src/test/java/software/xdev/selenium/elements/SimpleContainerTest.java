@@ -53,10 +53,7 @@ class SimpleContainerTest implements CanFindElements
 			
 			CustomizableRemoteWebElementInstaller.install(
 				this.remoteWebDriver,
-				() -> new ImprovedRemoteWebElement("if (document.readyState != 'complete') {"
-					+ "  return false;"
-					+ "}"
-					+ "return true;"));
+				() -> new ImprovedRemoteWebElement("return document.readyState == 'complete';"));
 			
 			this.remoteWebDriver.manage().window().maximize();
 			this.remoteWebDriver.get(capabilities instanceof FirefoxOptions ? "about:support" : "chrome://version");
