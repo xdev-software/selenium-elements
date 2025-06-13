@@ -68,6 +68,8 @@ Overall this improves:
     }
     ```
 
+You can also checkout the [integrated tests](./selenium-elements/src/test/java/) to see this in action.
+
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/selenium-elements/releases/latest#Installation)
 
