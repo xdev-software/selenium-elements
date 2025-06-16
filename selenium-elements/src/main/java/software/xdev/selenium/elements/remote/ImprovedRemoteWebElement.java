@@ -18,6 +18,7 @@ package software.xdev.selenium.elements.remote;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import software.xdev.selenium.elements.CanFindElements;
@@ -34,11 +35,28 @@ import software.xdev.selenium.elements.CanFindElements;
 @SuppressWarnings("java:S2160")
 public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFindElements
 {
-	protected String waitForServerLoadToFinishFunction;
+	protected Logger logger;
+	protected final String waitForServerLoadToFinishFunction;
+	protected boolean autoScrollIntoView = true;
 	
 	public ImprovedRemoteWebElement(final String waitForServerLoadToFinishFunction)
 	{
 		this.waitForServerLoadToFinishFunction = waitForServerLoadToFinishFunction;
+	}
+	
+	public ImprovedRemoteWebElement withAutoScrollIntoView(final boolean autoScrollIntoView)
+	{
+		this.autoScrollIntoView = autoScrollIntoView;
+		return this;
+	}
+	
+	protected Logger logger()
+	{
+		if(this.logger == null)
+		{
+			this.logger = LoggerFactory.getLogger(this.getClass());
+		}
+		return this.logger;
 	}
 	
 	@Override
@@ -57,8 +75,7 @@ public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFin
 		}
 		catch(final ElementNotInteractableException ex)
 		{
-			LoggerFactory.getLogger(this.getClass())
-				.warn(
+			this.logger().warn(
 					"Element can't be clicked via UI - executing JS click. "
 						+ "Please manually check if the element is accessible. "
 						+ "If the element is accessible consider calling performJsClick directly.", ex);
@@ -94,9 +111,16 @@ public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFin
 	
 	public void scrollIntoViewIfRequired()
 	{
-		if(!this.isDisplayed())
+		try
 		{
-			this.executeScript("arguments[0].scrollIntoView(true);", this);
+			if(this.autoScrollIntoView && !this.isDisplayed())
+			{
+				this.executeScript("arguments[0].scrollIntoView(true);", this);
+			}
+		}
+		catch(final ElementNotInteractableException ex)
+		{
+			this.logger().warn("Element can't be scrolled into view", ex);
 		}
 	}
 	
@@ -115,8 +139,7 @@ public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFin
 			final Boolean retVal = (Boolean)this.executeScript(this.waitForServerLoadToFinishFunction);
 			if(retVal == null)
 			{
-				LoggerFactory.getLogger(this.getClass())
-					.warn("waitForLoadToFinishFunction returned null! It should either return true or false");
+				this.logger().warn("waitForLoadToFinishFunction returned null! It should either return true or false");
 			}
 			finished = Boolean.TRUE.equals(retVal);
 		}
