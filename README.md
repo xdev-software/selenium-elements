@@ -7,7 +7,7 @@
 Define Selenium HTML elements as Java classes, similar to Selenium's [``@FindBy`` annotation](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/support/FindBy.html).
 
 Also contains a ton of other predefined utility, for example:
-* Automatically scrolling elements that perform operations into the view
+* Automatically scrolls elements that perform operations into the view
 * Safe click: When an element is detected as stale a JavaScript click is executed instead
 * Option to globally wait until the page finished loading
 * Waiting for some time until the element is present (``waitUntil``)
