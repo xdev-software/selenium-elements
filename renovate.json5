@@ -19,6 +19,16 @@
         "maven"
       ],
       "groupName": "net.sourceforge.pmd"
+    },
+    {
+      "description": "Group org.seleniumhq.selenium",
+      "matchPackagePatterns": [
+        "^org.seleniumhq.selenium"
+      ],
+      "datasources": [
+        "maven"
+      ],
+      "groupName": "org.seleniumhq.selenium"
     }
   ]
 }
