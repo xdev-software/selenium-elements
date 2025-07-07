@@ -2,12 +2,12 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/xdev-software/selenium-elements/check-build.yml?branch=develop)](https://github.com/xdev-software/selenium-elements/actions/workflows/check-build.yml?query=branch%3Adevelop)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xdev-software_selenium-elements&metric=alert_status)](https://sonarcloud.io/dashboard?id=xdev-software_selenium-elements)
 
-# <img src="https://raw.githubusercontent.com/SeleniumHQ/seleniumhq.github.io/690acbad7b4bf4656f116274809765db64e6ccf7/website_and_docs/static/images/logos/webdriver.svg" height=24 /> Elements for Selenium
+# <img src="https://raw.githubusercontent.com/SeleniumHQ/seleniumhq.github.io/690acbad7b4bf4656f116274809765db64e6ccf7/website_and_docs/static/images/logos/webdriver.svg" width=24 /> Elements for Selenium
 
 Define Selenium HTML elements as Java classes, similar to Selenium's [``@FindBy`` annotation](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/support/FindBy.html).
 
 Also contains a ton of other predefined utility, for example:
-* Automatically scrolling elements that perform operations into the view
+* Automatically scrolls elements that perform operations into the view
 * Safe click: When an element is detected as stale a JavaScript click is executed instead
 * Option to globally wait until the page finished loading
 * Waiting for some time until the element is present (``waitUntil``)
