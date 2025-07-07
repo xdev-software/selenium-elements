@@ -51,8 +51,6 @@ public final class CustomizableRemoteWebElementInstaller
 	
 	public static class CustomizableJsonToWebElementConverter extends JsonToWebElementConverter
 	{
-		// Can be removed once https://github.com/SeleniumHQ/selenium/issues/15884 is fixed
-		private final Method mSetOwner;
 		private final Supplier<RemoteWebElement> remoteWebElementSupplier;
 		
 		public CustomizableJsonToWebElementConverter(
@@ -60,30 +58,13 @@ public final class CustomizableRemoteWebElementInstaller
 			final Supplier<RemoteWebElement> remoteWebElementSupplier)
 		{
 			super(driver);
-			
-			try
-			{
-				this.mSetOwner = JsonToWebElementConverter.class.getDeclaredMethod("setOwner", RemoteWebElement.class);
-				this.mSetOwner.setAccessible(true);
-			}
-			catch(final NoSuchMethodException ex)
-			{
-				throw new IllegalStateException("Failed to find setOwner", ex);
-			}
 			this.remoteWebElementSupplier = remoteWebElementSupplier;
 		}
 		
 		@Override
 		protected RemoteWebElement newRemoteWebElement()
 		{
-			try
-			{
-				return (RemoteWebElement)this.mSetOwner.invoke(this, this.remoteWebElementSupplier.get());
-			}
-			catch(final IllegalAccessException | InvocationTargetException e)
-			{
-				throw new IllegalStateException("Failed to call setOwner", e);
-			}
+			return this.setOwner(this.remoteWebElementSupplier.get());
 		}
 	}
 	
