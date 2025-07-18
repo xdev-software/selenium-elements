@@ -1,3 +1,6 @@
+# 1.0.4
+* ``ImprovedWebElement#hasAttribute`` now waits for loading operations to complete (now calls ``prepareForOperation`` as ``getProperty`` already does)
+
 # 1.0.3
 * Removed reflection calls in ``CustomizableJsonToWebElementConverter`` as https://github.com/SeleniumHQ/selenium/issues/15884 was fixed #11
   * Selenium version 4.34+ is required

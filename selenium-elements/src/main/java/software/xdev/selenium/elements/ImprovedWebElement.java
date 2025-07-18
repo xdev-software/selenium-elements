@@ -109,6 +109,7 @@ public interface ImprovedWebElement extends WebElement, CanFindElements, WrapsEl
 	
 	default boolean hasAttribute(final String attribute)
 	{
+		this.prepareForOperation();
 		return (boolean)this.callFunction("hasAttribute", attribute);
 	}
 	
