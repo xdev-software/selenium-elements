@@ -1,3 +1,7 @@
+# 1.0.5
+* Add new shortcut method ``CanFindElements#waitForFirstByClassName``
+* Updated dependencies
+
 # 1.0.4
 * ``ImprovedWebElement#hasAttribute`` now waits for loading operations to complete (now calls ``prepareForOperation`` - like ``getProperty`` already does)
 
