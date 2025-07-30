@@ -65,6 +65,11 @@ public interface CanFindElements
 		return this.waitUntil(wd -> this.determineSearchContext(wd).findElement(by));
 	}
 	
+	default WebElement waitForFirstByClassName(final String className)
+	{
+		return this.waitForFirst(By.cssSelector("." + className));
+	}
+	
 	default <T extends WebElement> T waitForFirst(final Class<T> clazz)
 	{
 		return this.waitForFirst(clazz, null);

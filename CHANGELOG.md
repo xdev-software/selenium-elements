@@ -1,5 +1,9 @@
+# 1.0.5
+* Add new shortcut method ``CanFindElements#waitForFirstByClassName``
+* Updated dependencies
+
 # 1.0.4
-* ``ImprovedWebElement#hasAttribute`` now waits for loading operations to complete (now calls ``prepareForOperation`` as ``getProperty`` already does)
+* ``ImprovedWebElement#hasAttribute`` now waits for loading operations to complete (now calls ``prepareForOperation`` - like ``getProperty`` already does)
 
 # 1.0.3
 * Removed reflection calls in ``CustomizableJsonToWebElementConverter`` as https://github.com/SeleniumHQ/selenium/issues/15884 was fixed #11
