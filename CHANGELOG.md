@@ -1,3 +1,7 @@
+# 1.0.7
+* Added `nativeClick` method which executes the original/upstream click
+* Updated dependencies
+
 # 1.0.6
 * Updated dependencies
 
