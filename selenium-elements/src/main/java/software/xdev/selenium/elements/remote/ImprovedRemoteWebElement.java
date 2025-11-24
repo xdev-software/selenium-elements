@@ -88,6 +88,14 @@ public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFin
 		this.callFunction("click");
 	}
 	
+	/**
+	 * Calls the original/upstream click
+	 */
+	public void nativeClick()
+	{
+		super.click();
+	}
+	
 	@Override
 	public String getText()
 	{

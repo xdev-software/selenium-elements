@@ -44,6 +44,11 @@ public interface ImprovedWebElement extends WebElement, CanFindElements, WrapsEl
 		this.getWrappedRemoteElement().performJsClick();
 	}
 	
+	default void nativeClick()
+	{
+		this.getWrappedRemoteElement().nativeClick();
+	}
+	
 	@Override
 	default SearchContext determineSearchContext(final WebDriver webDriver)
 	{
