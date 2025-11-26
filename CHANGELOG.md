@@ -1,3 +1,6 @@
+# 1.0.8
+* Fix `ImprovedRemoteWebElement` not using correct search context
+
 # 1.0.7
 * Added `nativeClick` method which executes the original/upstream click
 * Updated dependencies
