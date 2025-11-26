@@ -16,6 +16,7 @@
 package software.xdev.selenium.elements.remote;
 
 import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.slf4j.Logger;
@@ -63,6 +64,12 @@ public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFin
 	public WebDriver getWebDriver()
 	{
 		return this.getWrappedDriver();
+	}
+	
+	@Override
+	public SearchContext determineSearchContext(final WebDriver webDriver)
+	{
+		return this;
 	}
 	
 	@Override
