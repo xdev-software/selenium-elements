@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<licensePluginReport goal="FORMAT" timestamp="1764240243854">
+    <module artifactId="selenium-elements" groupId="software.xdev" version="1.1.0"/>
+    <files>
+        <file path="src/main/java/software/xdev/selenium/elements/ByAnd.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/CanFindElements.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/CanFindElementsSelfSearchContext.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/ImprovedWebElement.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/SimpleImprovedWebElement.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/annotation/AnnotationSelectorBuilder.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/annotation/FindBySelector.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/instantiator/DefaultElementInstantiator.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/instantiator/ElementInstantiator.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/instantiator/ElementInstantiatorInstance.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/remote/CustomizableRemoteWebElementInstaller.java" result="NOOP"/>
+        <file path="src/main/java/software/xdev/selenium/elements/remote/ImprovedRemoteWebElement.java" result="NOOP"/>
+        <file path="src/test/java/software/xdev/selenium/elements/SimpleContainerTest.java" result="NOOP"/>
+    </files>
+</licensePluginReport>
