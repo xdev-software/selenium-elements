@@ -1,3 +1,7 @@
+# 1.1.0
+* Internal restructuring - new interfaces to deduplicate code
+* Added `SimpleImprovedWebElement` which can be for direct instantiation 
+
 # 1.0.8
 * Fix `ImprovedRemoteWebElement` not using correct search context
 

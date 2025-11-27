@@ -20,7 +20,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WrapsElement;
@@ -37,7 +36,7 @@ import software.xdev.selenium.elements.remote.ImprovedRemoteWebElement;
  *
  * @apiNote Requires a underlying {@link ImprovedRemoteWebElement}
  */
-public interface ImprovedWebElement extends WebElement, CanFindElements, WrapsElement
+public interface ImprovedWebElement extends WebElement, CanFindElementsSelfSearchContext, WrapsElement
 {
 	default void performJsClick()
 	{
@@ -47,12 +46,6 @@ public interface ImprovedWebElement extends WebElement, CanFindElements, WrapsEl
 	default void nativeClick()
 	{
 		this.getWrappedRemoteElement().nativeClick();
-	}
-	
-	@Override
-	default SearchContext determineSearchContext(final WebDriver webDriver)
-	{
-		return this;
 	}
 	
 	@Override

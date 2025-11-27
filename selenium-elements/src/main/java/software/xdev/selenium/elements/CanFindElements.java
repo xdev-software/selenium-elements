@@ -88,10 +88,32 @@ public interface CanFindElements
 		final Duration duration)
 	{
 		return this.elementProxyCreator().find(
-			by -> this.waitUntil(
-				wd -> this.determineSearchContext(wd)
-					.findElement(additionalAndBy != null ? new ByAnd(by, additionalAndBy) : by),
-				duration),
+			by -> {
+				final By byToUse;
+				
+				final boolean byPresent = by != null;
+				final boolean additionalByPresent = additionalAndBy != null;
+				if(byPresent && additionalByPresent)
+				{
+					byToUse = new ByAnd(by, additionalAndBy);
+				}
+				else if(byPresent)
+				{
+					byToUse = by;
+				}
+				else if(additionalByPresent)
+				{
+					byToUse = additionalAndBy;
+				}
+				else
+				{
+					throw new IllegalStateException("No locator that is not null present");
+				}
+				
+				return this.waitUntil(
+					wd -> this.determineSearchContext(wd).findElement(byToUse),
+					duration);
+			},
 			clazz);
 	}
 	

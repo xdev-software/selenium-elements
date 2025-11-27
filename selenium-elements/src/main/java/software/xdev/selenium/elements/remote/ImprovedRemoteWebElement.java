@@ -16,13 +16,12 @@
 package software.xdev.selenium.elements.remote;
 
 import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import software.xdev.selenium.elements.CanFindElements;
+import software.xdev.selenium.elements.CanFindElementsSelfSearchContext;
 
 
 /**
@@ -34,7 +33,7 @@ import software.xdev.selenium.elements.CanFindElements;
  * </ul>
  */
 @SuppressWarnings("java:S2160")
-public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFindElements
+public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFindElementsSelfSearchContext
 {
 	protected Logger logger;
 	protected final String waitForServerLoadToFinishFunction;
@@ -64,12 +63,6 @@ public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFin
 	public WebDriver getWebDriver()
 	{
 		return this.getWrappedDriver();
-	}
-	
-	@Override
-	public SearchContext determineSearchContext(final WebDriver webDriver)
-	{
-		return this;
 	}
 	
 	@Override
