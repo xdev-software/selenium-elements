@@ -1,3 +1,6 @@
+# 1.1.1
+* Updated dependencies
+
 # 1.1.0
 * Internal restructuring - new interfaces to deduplicate code
 * Added `SimpleImprovedWebElement` which can be for direct instantiation 
