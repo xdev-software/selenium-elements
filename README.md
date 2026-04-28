@@ -12,7 +12,7 @@ Also contains a ton of other predefined utility, for example:
 * Waiting for some time until the element is present (``waitUntil``)
 
 Overall this should result in:
-* Less [flaky](https://www.browserstack.com/test-reporting-and-analytics/features/test-reporting/what-is-flaky-test) tests
+* Less [flaky](https://www.jetbrains.com/teamcity/ci-cd-guide/concepts/flaky-tests/) tests
 * Abstraction of elements in an object oriented way
 
 ## Usage
