@@ -29,6 +29,16 @@
         "maven"
       ],
       "groupName": "org.seleniumhq.selenium"
+    },
+    {
+      "description": "Group org.slf4j",
+      "matchPackagePatterns": [
+        "^org.slf4j"
+      ],
+      "datasources": [
+        "maven"
+      ],
+      "groupName": "org.slf4j"
     }
   ]
 }
