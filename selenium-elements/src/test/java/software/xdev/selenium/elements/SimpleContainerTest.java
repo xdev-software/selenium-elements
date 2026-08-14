@@ -56,7 +56,9 @@ class SimpleContainerTest implements CanFindElements
 				() -> new ImprovedRemoteWebElement("return document.readyState == 'complete';"));
 			
 			this.remoteWebDriver.manage().window().maximize();
-			this.remoteWebDriver.get("file:///proc/cpuinfo");
+			this.remoteWebDriver.get(capabilities instanceof FirefoxOptions
+				? "file:///proc/cpuinfo"
+				: "chrome://version");
 			
 			final BodyElement bodyElement = this.waitForFirst(BodyElement.class);
 			final String text = bodyElement.getText();
