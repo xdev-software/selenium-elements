@@ -36,12 +36,20 @@ import software.xdev.selenium.elements.CanFindElementsSelfSearchContext;
 public class ImprovedRemoteWebElement extends RemoteWebElement implements CanFindElementsSelfSearchContext
 {
 	protected Logger logger;
-	protected final String waitForServerLoadToFinishFunction;
+	
+	protected String waitForServerLoadToFinishFunction;
 	protected boolean autoScrollIntoView = true;
 	
 	public ImprovedRemoteWebElement(final String waitForServerLoadToFinishFunction)
 	{
+		this.withWaitForServerLoadToFinishFunction(waitForServerLoadToFinishFunction);
+	}
+	
+	public ImprovedRemoteWebElement withWaitForServerLoadToFinishFunction(
+		final String waitForServerLoadToFinishFunction)
+	{
 		this.waitForServerLoadToFinishFunction = waitForServerLoadToFinishFunction;
+		return this;
 	}
 	
 	public ImprovedRemoteWebElement withAutoScrollIntoView(final boolean autoScrollIntoView)
