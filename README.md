@@ -12,7 +12,7 @@ Also contains a ton of other predefined utility, for example:
 * Waiting for some time until the element is present (``waitUntil``)
 
 Overall this should result in:
-* Less [flaky](https://www.browserstack.com/test-reporting-and-analytics/features/test-reporting/what-is-flaky-test) tests
+* Less [flaky](https://www.jetbrains.com/teamcity/ci-cd-guide/concepts/flaky-tests/) tests
 * Abstraction of elements in an object oriented way
 
 ## Usage
@@ -73,7 +73,7 @@ You can also checkout the [integrated tests](./selenium-elements/src/test/java/)
 [Installation guide for the latest release](https://github.com/xdev-software/selenium-elements/releases/latest#Installation)
 
 ## Support
-If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services/support).
+If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services-products/support).
 
 ## Contributing
 See the [contributing guide](./CONTRIBUTING.md) for detailed instructions on how to get started with our project.

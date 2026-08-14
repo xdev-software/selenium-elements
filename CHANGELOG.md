@@ -1,3 +1,8 @@
+# 1.2.0
+* `waitForServerLoadToFinishFunction` can now be changed after `ImprovedRemoteWebElement` was created
+* Cache reflection methods to improve performance
+* Updated dependencies
+
 # 1.1.1
 * Updated dependencies
 

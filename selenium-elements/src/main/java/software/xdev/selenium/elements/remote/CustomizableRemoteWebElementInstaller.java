@@ -30,15 +30,22 @@ import org.openqa.selenium.remote.RemoteWebElement;
 @SuppressWarnings("java:S3011") // Force accessibility
 public final class CustomizableRemoteWebElementInstaller
 {
+	private static Method mSetElementConverter;
+	
 	public static void install(
 		final RemoteWebDriver driver,
 		final Supplier<RemoteWebElement> remoteWebElementSupplier)
 	{
 		try
 		{
-			final Method mSetElementConverter =
-				RemoteWebDriver.class.getDeclaredMethod("setElementConverter", JsonToWebElementConverter.class);
-			mSetElementConverter.setAccessible(true);
+			if(mSetElementConverter == null)
+			{
+				mSetElementConverter = RemoteWebDriver.class.getDeclaredMethod(
+					"setElementConverter",
+					JsonToWebElementConverter.class);
+				mSetElementConverter.setAccessible(true);
+			}
+			
 			mSetElementConverter.invoke(
 				driver,
 				new CustomizableJsonToWebElementConverter(driver, remoteWebElementSupplier));
